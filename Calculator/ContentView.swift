@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var result = "0"
+
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(alignment:.trailing,spacing: 0) {
+
+            HStack {
+                Text(result)
+                    .padding()
+                    .font(.largeTitle)
+                    .foregroundColor(Color.white)
+            }
+
             HStack {
                 Button("7") {
 
@@ -65,6 +75,61 @@ struct ContentView: View {
                 .background( Color.orange)
             }
             .foregroundColor(Color .white)
+
+            HStack {
+                Button("1") {
+
+                }
+                .padding()
+                .frame(maxWidth:  .infinity)
+
+                Button("2") {
+
+                }
+                .padding()
+                .frame(maxWidth:  .infinity)
+
+                Button("3") {
+
+                }
+                .padding()
+                .frame(maxWidth:  .infinity)
+
+                Button("+") {
+
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background( Color.orange)
+            }
+            .foregroundColor(Color .white)
+
+            GeometryReader { geometry in
+                HStack{
+                    Button("0") {
+
+                    }
+                    .padding()
+                    .frame(minWidth: geometry.size.width
+                    / 2 )
+
+                    Button(",") {
+
+                    }
+                    .padding()
+                    .frame(maxWidth:  .infinity)
+
+                    Button("=") {
+
+                    }
+                    .padding()
+                    .frame(maxWidth:  .infinity)
+                    .background( Color.orange)
+                }
+                .foregroundColor(Color .white)
+            }.frame(maxHeight: 52)
+
+
         }
         .frame(maxWidth: .infinity)
         .background(Color.black)
