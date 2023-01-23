@@ -8,17 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var result = "0"
+    @State var result = 0
 
     var body: some View {
-        VStack(alignment:.trailing,spacing: 0) {
+        VStack(alignment: .trailing, spacing: 0) {
+            Text("\(String(result).count)")
+                .foregroundColor(Color.blue)
+            Spacer()
+            HStack {
+                Text(String(result))
+                    .padding()
+                    .lineLimit(1)
+                    .font(.system(size: CGFloat(80 / Int((Double(String(result).count + 10) / 8.0)))))
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity)
+                    .fixedSize(horizontal: true, vertical: false)
+            }
+
 
             HStack {
-                Text(result)
-                    .padding()
-                    .font(.largeTitle)
-                    .foregroundColor(Color.white)
+                Button("AC") {
+                    result = 0
+
+                }
+                .padding()
+                .frame(maxWidth:  .infinity)
+
+                Button("+/-") {
+                }
+                .padding()
+                .frame(maxWidth:  .infinity)
+
+                Button("%") {
+
+                }
+                .padding()
+                .frame(maxWidth:  .infinity)
+
+                Button("/") {
+
+                }
+                .padding(.vertical, 40)
+                .frame(maxWidth: .infinity)
+                .background( Color.orange)
             }
+            .foregroundColor(Color .white)
 
             HStack {
                 Button("7") {
@@ -42,7 +76,7 @@ struct ContentView: View {
                 Button("x") {
 
                 }
-                .padding()
+                .padding(.vertical, 40)
                 .frame(maxWidth: .infinity)
                 .background( Color.orange)
             }
@@ -70,7 +104,7 @@ struct ContentView: View {
                 Button("-") {
 
                 }
-                .padding()
+                .padding(.vertical, 40)
                 .frame(maxWidth: .infinity)
                 .background( Color.orange)
             }
@@ -91,6 +125,7 @@ struct ContentView: View {
 
                 Button("3") {
 
+
                 }
                 .padding()
                 .frame(maxWidth:  .infinity)
@@ -98,7 +133,7 @@ struct ContentView: View {
                 Button("+") {
 
                 }
-                .padding()
+                .padding(.vertical, 40)
                 .frame(maxWidth: .infinity)
                 .background( Color.orange)
             }
@@ -110,8 +145,7 @@ struct ContentView: View {
 
                     }
                     .padding()
-                    .frame(minWidth: geometry.size.width
-                    / 2 )
+                    .frame(minWidth: geometry.size.width / 2.05 )
 
                     Button(",") {
 
@@ -122,18 +156,18 @@ struct ContentView: View {
                     Button("=") {
 
                     }
-                    .padding()
+                    .padding(.vertical, 40)
                     .frame(maxWidth:  .infinity)
                     .background( Color.orange)
                 }
                 .foregroundColor(Color .white)
-            }.frame(maxHeight: 52)
+            }.frame(maxHeight: 92)
 
 
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
-        .padding()
+
     }
 }
 
